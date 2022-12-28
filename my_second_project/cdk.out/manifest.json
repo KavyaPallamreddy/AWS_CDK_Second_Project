@@ -1,0 +1,117 @@
+{
+  "version": "22.0.0",
+  "artifacts": {
+    "MyDevStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "MyDevStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "MyDevStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://268360024445/us-west-2",
+      "properties": {
+        "templateFile": "MyDevStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::268360024445:role/cdk-hnb659fds-deploy-role-268360024445-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::268360024445:role/cdk-hnb659fds-cfn-exec-role-268360024445-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-268360024445-us-west-2/6770e60159909e5d7a762fed13e68cf2d6c0322b045aa7cb2b7b01d04ed298f6.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "MyDevStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::268360024445:role/cdk-hnb659fds-lookup-role-268360024445-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "MyDevStack.assets"
+      ],
+      "metadata": {
+        "/MyDevStack/myDevArtifactBucketId/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myDevArtifactBucketId6A8A0E41"
+          }
+        ],
+        "/MyDevStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/MyDevStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "MyDevStack"
+    },
+    "MyProdStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "MyProdStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "MyProdStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://268360024445/us-west-2",
+      "properties": {
+        "templateFile": "MyProdStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::268360024445:role/cdk-hnb659fds-deploy-role-268360024445-us-west-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::268360024445:role/cdk-hnb659fds-cfn-exec-role-268360024445-us-west-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-268360024445-us-west-2/e047eb06e1682ef5cabad30c0281531be5a9cd5ba312a710de4957092807ee16.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "MyProdStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::268360024445:role/cdk-hnb659fds-lookup-role-268360024445-us-west-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "MyProdStack.assets"
+      ],
+      "metadata": {
+        "/MyProdStack/myProdArtifactBucketId/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "myProdArtifactBucketId99D5827A"
+          }
+        ],
+        "/MyProdStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/MyProdStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "MyProdStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
